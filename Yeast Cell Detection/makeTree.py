@@ -33,6 +33,7 @@ for cell in df_all_cells["cell"]:
     if df_all_cells["mother"][cell] == "None": # these are the original cells which do not have an assigned mother cell
         dot.node(f'cell {cell}', shape='box', fillcolor='deepskyblue', style='filled') # this command draws a box with the cell number inside
     elif df_all_cells["mother"][cell] == "Unknown": # we do not want these cells in the tree
+        dot.node(f'cell {cell}', shape='box', fillcolor='lime', style='filled')
         continue
     else: # these are all daughter cells and need edges drawn between them and their respective mother cell
         fill = 'lime'
